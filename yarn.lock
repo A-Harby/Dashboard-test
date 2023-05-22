@@ -1233,6 +1233,18 @@ svelte-check@^2.0.0:
     svelte-preprocess "^4.0.0"
     typescript "*"
 
+svelte-collapse@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-collapse/-/svelte-collapse-0.0.4.tgz#c8ac6141213563b1496c593f179e662db6221001"
+  integrity sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==
+
+svelte-collapsible@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/svelte-collapsible/-/svelte-collapsible-0.2.1.tgz#e71cbafffc81fdb88004853f76a3334f51aa44ef"
+  integrity sha512-aa916eRugYB5NtUZh4GjUIQjbuLtSLRRrVd2LzemmOXi0dDPzANcxYJ/ZI9r+GtFh/wUJtRX5rK9A03sAbfi9Q==
+  dependencies:
+    svelte-collapse "^0.0.4"
+
 svelte-preprocess@^4.0.0:
   version "4.10.7"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.10.7.tgz#3626de472f51ffe20c9bc71eff5a3da66797c362"

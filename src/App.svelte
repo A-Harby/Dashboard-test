@@ -6,8 +6,16 @@
     { name: "Dashboard", repo: "tfgrid_dashboard", workflow: "Selenium Tests" },
     { name: "Weblets", repo: "grid_weblets", workflow: "build" },
     { name: "TSClient", repo: "grid3_client_ts", workflow: "grid3-nightly" },
-    { name: "Terraform", repo: "terraform-provider-grid", workflow: "Run Tests" },
-    { name: "Proxy", repo: "tfgridclient_proxy", workflow: "Integration tests" },
+    {
+      name: "Terraform",
+      repo: "terraform-provider-grid",
+      workflow: "Run Tests",
+    },
+    {
+      name: "Proxy",
+      repo: "tfgridclient_proxy",
+      workflow: "Integration tests",
+    },
   ];
 </script>
 
@@ -15,26 +23,24 @@
   <h2>Test Dashboard</h2>
 </div>
 <main class="container">
-  <h2>Status</h2>
   <div class="cards">
     <FinalReport {Repo} />
   </div>
-  <h2>History</h2>
+  <h1 style="text-align: center;">Statistics</h1>
   <div class="cards">
     <ReportList {Repo} />
   </div>
 </main>
 
 <style>
-  .nav{
+  .nav {
     height: 75px;
     padding: 15px 0;
     font-size: x-large;
     text-align: center;
-    background-color: black;
+    background-color: #111217;
   }
-  .cards{
+  .cards {
     position: relative;
-    background-color: #1F3F49;
   }
 </style>

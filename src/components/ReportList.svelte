@@ -1,36 +1,46 @@
 <script>
+  import Chart from "./Chart.svelte";
   import RunList from "./RunList.svelte";
+  import CollapsibleSection from "./CollapsibleSection.svelte";
 
   export let Repo = [];
 </script>
 
-<div class="repo">
-  {#each Repo as repo}
-    <div class="repo">
-      <p class="name-display">{repo.name}</p>
-      <RunList {repo} />
+{#each Repo as repo}
+<section>
+  <CollapsibleSection headerText={repo.name}>
+    <div class="content">
+      <div class="repo">
+        <div class="repo">
+          <RunList {repo} />
+        </div>
+        <div class="chart">
+          <Chart {repo} />
+        </div>
+      </div>
     </div>
-  {/each}
-</div>
+  </CollapsibleSection>
+</section>
+{/each}
 
 <style>
-   .name-display {
-    position: absolute;
-    top: -10px;
-    width: 150px;
-    height: 50px;
-    background: black;
-    color: #fff;
-    border: 10px #1F3F49 solid;
-    text-align: center;
-    font-size: x-large;
+  .chart{
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
   }
   .repo {
-    width: 2000px;
+    display: flex;
     height: 300px;
-    padding: 60px;
-    position: relative;
     align-items: center;
-    display: table-cell;
+  }
+
+  section {
+    background-color: #20283E;
+  }
+
+  .content {
+    background-color: #17223B;
+    padding: 0.5em;
   }
 </style>

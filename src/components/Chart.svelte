@@ -1,6 +1,7 @@
-<script>
+<script src="https://unpkg.com/svelte-heatmap">
   import { Octokit } from "octokit";
-  import Card from "./Card.svelte";
+  import { tweened } from "svelte/motion";
+  import Pie from "./Pie.svelte";
 
   export let repo;
   let repo_name = repo.repo;
@@ -43,34 +44,41 @@
       }
     }
 
-    return await run_list(owner, repo_name, workflow_id);
+    const run_list_ob = await run_list(owner, repo_name, workflow_id);
+
+    return run_list_ob;
   }
 
-  let items = "Loading";
-  let color = "darkgoldenrod";
-  (async () => {
+  async function run_details() {
     const runlist = await run();
-    console.log(runlist);
-    items = runlist.data["workflow_runs"][0]["conclusion"];
-    color = items === "success" ? "#31A82D" : "#DB3334";
-    items = items === null ? "Working" : items;
-    color = items === "Working" ? "darkgoldenrod" : color;
+    let size = runlist.data["workflow_runs"].length;
+    let pass = 0;
+    let fail = 0;
+    for (let i = 0; i < size; i++) {
+      if (runlist.data["workflow_runs"][i]["conclusion"] == "failure") {
+        fail += 1;
+      } else {
+        pass += 1;
+      }
+    }
+    return fail;
+  }
+
+  let result = 0;
+  const store = tweened(0, { duration: 1000 });
+  (async () => {
+    let result = await run_details();
+    console.log(result);
+    store.set(result);
   })();
 </script>
 
-<Card>
-  <h3 class="card" style="border:15px solid {color};">{items}</h3>
-</Card>
+<body>
+  <Pie size={200} percent={$store} />
+</body>
 
 <style>
-  .card {
-    font-size: x-large;
-    padding-top: 45px;
-    text-align: center;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+  body {
+    background-color: #17223b;
   }
 </style>

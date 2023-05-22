@@ -1,6 +1,5 @@
 <script>
   import { Octokit } from "octokit";
-  import { noop } from "svelte/internal";
   import Card from "./Card.svelte";
 
   export let repo;
@@ -8,7 +7,7 @@
   let repo_workflow = repo.workflow;
 
   const octokit = new Octokit({
-    auth: "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",
+    auth: "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",
   });
 
   function workflow(owner, repo) {
@@ -52,8 +51,11 @@
   async function run_details() {
     let runs = [];
     const runlist = await run();
-    let color = 'darkgoldenrod';
-    let number, result, time, url = 'Loading';
+    let color = "darkgoldenrod";
+    let number,
+      result,
+      time,
+      url = "Loading";
     let size =
       runlist.data["workflow_runs"].length > 5
         ? 5
@@ -98,12 +100,12 @@
 
 <style>
   .cards {
+    background-color: #20283e;
     margin: 10px;
-    font-size: large;
-    padding-top: 45px;
-    padding-left: 20px;
-    background-color: #f1f1f1;
-    height: 200px;
-    width: 200px;
+    font-size: x-large;
+    text-align: center;
+    padding-top: 25px;
+    height: 250px;
+    width: 250px;
   }
 </style>
