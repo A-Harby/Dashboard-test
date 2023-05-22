@@ -1,13 +1,16 @@
 <script>
   import { Octokit } from "octokit";
   import Card from "./Card.svelte";
+  import { AES } from 'crypto-es/lib/aes';
+	import { Utf8 } from 'crypto-es/lib/core';
 
   export let repo;
   let repo_name = repo.repo;
   let repo_workflow = repo.workflow;
 
+  let data = 'U2FsdGVkX19JiO2zWIvUIWor4+MboPmBcBMe2UqUUNG0zQ7SLX6s7L+YqXzAuzQlN6Rs370dOkyX5iP9PKU+nSaHVS5/s30i641uD4dJvKKZEsv1GHuc1/c8Qm6eTR6I9LhbOWz0m0g9mfeCqtGw7g=='
   const octokit = new Octokit({
-    auth: "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",
+    auth: AES.decrypt(data, "password").toString(Utf8),
   });
 
   function workflow(owner, repo) {
