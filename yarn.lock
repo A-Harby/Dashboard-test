@@ -596,6 +596,11 @@ console-clear@^1.1.0:
   resolved "https://registry.npmjs.org/console-clear/-/console-clear-1.1.1.tgz"
   integrity sha512-pMD+MVR538ipqkG5JXeOEbKWS5um1H4LUUccUQG68qpeqBYbzYy79Gh55jkd2TtPdRfUaLWdv6LPP//5Zt0aPQ==
 
+crypto-es@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.npmjs.org/crypto-es/-/crypto-es-1.2.7.tgz"
+  integrity sha512-UUqiVJ2gUuZFmbFsKmud3uuLcNP2+Opt+5ysmljycFCyhA0+T16XJmo1ev/t5kMChMqWh7IEvURNCqsg+SjZGQ==
+
 deepmerge@^4.2.2:
   version "4.3.0"
   resolved "https://registry.npmjs.org/deepmerge/-/deepmerge-4.3.0.tgz"
