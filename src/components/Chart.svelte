@@ -8,7 +8,7 @@
   let repo_workflow = repo.workflow;
 
   const octokit = new Octokit({
-    auth: "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",
+    auth: "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",
   });
 
   function workflow(owner, repo) {
