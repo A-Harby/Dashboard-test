@@ -68,6 +68,7 @@
 <style>
   .card {
     font-size: x-large;
+    margin-left: 100px;
     padding-top: 45px;
     text-align: center;
     height: 150px;
