@@ -23,6 +23,10 @@
     { name: "RMB Test", repo: "tfgrid-sdk-go", workflow: "RMB lint and test" }
   ];
 
+  let Repo4: any = [
+    Repo1[1], Repo1[3], Repo2[1], Repo1[2]
+  ];
+
 </script>
 
 <div class="nav">
@@ -36,9 +40,7 @@
   </div>
   <h1 style="text-align: center;">Statistics</h1>
   <div class="cards">
-    <ReportList {Repo1} />
-    <ReportList {Repo2} />
-    <ReportList {Repo3} />
+    <ReportList {Repo4} />
   </div>
 </main>
 

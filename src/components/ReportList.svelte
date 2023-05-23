@@ -3,13 +3,11 @@
   import RunList from "./RunList.svelte";
   import CollapsibleSection from "./CollapsibleSection.svelte";
 
-  export let Repo1 = [];
-  export let Repo2 = [];
-  export let Repo3 = [];
+  export let Repo4 = [];
 </script>
 
 <div>
-{#each Repo1 as repo}
+{#each Repo4 as repo}
 <section>
   <CollapsibleSection headerText={repo.name}>
     <div class="content">
@@ -26,39 +24,6 @@
 </section>
 {/each}
 
-{#each Repo2 as repo}
-<section>
-  <CollapsibleSection headerText={repo.name}>
-    <div class="content">
-      <div class="repo">
-        <div class="repo">
-          <RunList {repo} />
-        </div>
-        <div class="chart">
-          <Chart {repo} />
-        </div>
-      </div>
-    </div>
-  </CollapsibleSection>
-</section>
-{/each}
-
-{#each Repo3 as repo}
-<section>
-  <CollapsibleSection headerText={repo.name}>
-    <div class="content">
-      <div class="repo">
-        <div class="repo">
-          <RunList {repo} />
-        </div>
-        <div class="chart">
-          <Chart {repo} />
-        </div>
-      </div>
-    </div>
-  </CollapsibleSection>
-</section>
-{/each}
 </div>
 
 <style>
