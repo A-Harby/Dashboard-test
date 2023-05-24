@@ -7,7 +7,7 @@
 <div class="results">
   {#each Repo4 as repo}
     <div class="repo">
-      <p class="name-display">{repo.name}</p>
+      <a class="name-display" href={repo.url} target="_blank" rel="noreferrer">{repo.name}</a>
       <p class="name-display date">{repo.Created}</p>
       <div class="chart"><SuiteResult {repo} /></div>
     </div>
@@ -31,7 +31,8 @@
     font-size: xx-large;
   }
   .date {
-    margin-top: 90px;
+    font-size: x-large;
+    margin-top: 100px;
   }
   .repo {
     padding: 10px;

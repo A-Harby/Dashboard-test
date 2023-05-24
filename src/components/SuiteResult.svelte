@@ -7,9 +7,9 @@
     labels: ["Failed", "Passed", "Skipped", "Not run"],
     datasets: [
       {
-        data: [repo.Fail, repo.Pass, repo.Skipp, repo.Notrun],
+        data: [repo.Fail, repo.Pass, repo.Skip, repo.Notrun],
         backgroundColor: ["#F7464A", "#8BC34A", "#FDB45C", "#949FB1"],
-        hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5"],
+        hoverBackgroundColor: ["#FF5A5E", "#9CCC4B", "#FFC870", "#A8B3C5"],
       },
     ],
   };
