@@ -3,11 +3,11 @@
   import RunList from "./RunList.svelte";
   import CollapsibleSection from "./CollapsibleSection.svelte";
 
-  export let Repo4 = [];
+  export let Repo5 = [];
 </script>
 
 <div>
-{#each Repo4 as repo}
+{#each Repo5 as repo}
 <section>
   <CollapsibleSection headerText={repo.name}>
     <div class="content">

@@ -104,8 +104,8 @@
 <style>
   .cards {
     background-color: #20283e;
-    margin: 10px;
-    font-size: x-large;
+    margin: 15px;
+    font-size: xx-large;
     text-align: center;
     padding-top: 25px;
     height: 250px;
