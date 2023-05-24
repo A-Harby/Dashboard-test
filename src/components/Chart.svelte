@@ -2,14 +2,15 @@
   import { Octokit } from "octokit";
   import { tweened } from "svelte/motion";
   import Pie from "./Pie.svelte";
-  import { AES } from 'crypto-es/lib/aes';
-	import { Utf8 } from 'crypto-es/lib/core';
+  import { AES } from "crypto-es/lib/aes";
+  import { Utf8 } from "crypto-es/lib/core";
 
   export let repo;
   let repo_name = repo.repo;
   let repo_workflow = repo.workflow;
 
-  let data = 'U2FsdGVkX19JiO2zWIvUIWor4+MboPmBcBMe2UqUUNG0zQ7SLX6s7L+YqXzAuzQlN6Rs370dOkyX5iP9PKU+nSaHVS5/s30i641uD4dJvKKZEsv1GHuc1/c8Qm6eTR6I9LhbOWz0m0g9mfeCqtGw7g=='
+  let data =
+    "U2FsdGVkX19JiO2zWIvUIWor4+MboPmBcBMe2UqUUNG0zQ7SLX6s7L+YqXzAuzQlN6Rs370dOkyX5iP9PKU+nSaHVS5/s30i641uD4dJvKKZEsv1GHuc1/c8Qm6eTR6I9LhbOWz0m0g9mfeCqtGw7g==";
   const octokit = new Octokit({
     auth: AES.decrypt(data, "password").toString(Utf8),
   });

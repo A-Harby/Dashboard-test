@@ -13,7 +13,7 @@
       <RunResult {repo} />
     </div>
   {/each}
-  
+
   {#each Repo2 as repo}
     <div class="repo">
       <p class="name-display">{repo.name}</p>
@@ -30,7 +30,7 @@
 </div>
 
 <style>
-  .results{
+  .results {
     height: 300px;
     background: #17223b;
   }

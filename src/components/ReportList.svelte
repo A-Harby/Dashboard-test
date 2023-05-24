@@ -7,27 +7,26 @@
 </script>
 
 <div>
-{#each Repo5 as repo}
-<section>
-  <CollapsibleSection headerText={repo.name}>
-    <div class="content">
-      <div class="repo">
-        <div class="repo">
-          <RunList {repo} />
+  {#each Repo5 as repo}
+    <section>
+      <CollapsibleSection headerText={repo.name}>
+        <div class="content">
+          <div class="repo">
+            <div class="repo">
+              <RunList {repo} />
+            </div>
+            <div class="chart">
+              <Chart {repo} />
+            </div>
+          </div>
         </div>
-        <div class="chart">
-          <Chart {repo} />
-        </div>
-      </div>
-    </div>
-  </CollapsibleSection>
-</section>
-{/each}
-
+      </CollapsibleSection>
+    </section>
+  {/each}
 </div>
 
 <style>
-  .chart{
+  .chart {
     display: flex;
     margin-left: auto;
     margin-right: 100px;
@@ -39,11 +38,11 @@
   }
 
   section {
-    background-color: #20283E;
+    background-color: #20283e;
   }
 
   .content {
-    background-color: #17223B;
+    background-color: #17223b;
     padding: 0.5em;
   }
 </style>
