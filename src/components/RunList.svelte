@@ -1,6 +1,5 @@
 <script>
   import { Octokit } from "octokit";
-  import Card from "./Card.svelte";
   import { AES } from "crypto-es/lib/aes";
   import { Utf8 } from "crypto-es/lib/core";
 
@@ -92,14 +91,15 @@
 </script>
 
 {#each runs as detials}
-  <Card>
-    <div class="cards">
-      <p>Run Number:{detials.number}</p>
-      <p style="color:{detials.color};">{detials.result}</p>
-      <p>{detials.time.toLocaleString()}</p>
-      <a href={detials.url} target="_blank" rel="noreferrer">Logs</a>
-    </div>
-  </Card>
+<div>
+  <div class="cards">
+    <p>Run Number:{detials.number}</p>
+    <p style="color:{detials.color};">{detials.result}</p>
+    <p>{detials.time.toLocaleString()}</p>
+    <a href={detials.url} target="_blank" rel="noreferrer">Logs</a>
+  </div>
+  <slot />
+</div>
 {/each}
 
 <style>

@@ -1,9 +1,8 @@
 <script src="https://unpkg.com/svelte-heatmap">
   import { Octokit } from "octokit";
-  import { tweened } from "svelte/motion";
-  import Pie from "./Pie.svelte";
   import { AES } from "crypto-es/lib/aes";
   import { Utf8 } from "crypto-es/lib/core";
+  import Pie from "./Pie.svelte";
 
   export let repo;
   let repo_name = repo.repo;
@@ -65,24 +64,32 @@
         pass += 1;
       }
     }
-    return fail;
+    return [fail, pass];
   }
-
-  let result = 0;
-  const store = tweened(0, { duration: 1000 });
-  (async () => {
-    let result = await run_details();
-    console.log(result);
-    store.set(result);
-  })();
+  async function fetchData() {
+    let data = await run_details();
+    console.log(data);
+    return data;
+  }
 </script>
 
 <body>
-  <Pie size={200} percent={$store} />
+  {#await fetchData()}
+    <p>loading</p>
+  {:then result}
+    <div class="chart"><Pie {result} /></div>
+  {/await}
+
 </body>
 
 <style>
   body {
     background-color: #17223b;
+  }
+  .chart{
+    margin-left: 75px;
+    height: 275px;
+    width: 275px;
+    background-color: oldlace;
   }
 </style>

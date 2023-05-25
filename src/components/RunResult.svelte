@@ -1,6 +1,5 @@
 <script>
   import { Octokit } from "octokit";
-  import Card from "./Card.svelte";
   import { AES } from "crypto-es/lib/aes";
   import { Utf8 } from "crypto-es/lib/core";
 
@@ -62,9 +61,10 @@
   })();
 </script>
 
-<Card>
+<div>
   <h3 class="card" style="border:15px solid {color};">{items}</h3>
-</Card>
+  <slot />
+</div>
 
 <style>
   .card {

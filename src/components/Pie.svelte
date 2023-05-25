@@ -1,25 +1,37 @@
 <script>
-  export let size = 200;
-  export let percent = 0;
-  export let bgColor = "#1e7145";
-  export let fgColor = "#b91d47";
-  $: viewBox = `0 0 ${size} ${size}`;
+  import { Doughnut } from "svelte-chartjs";
 
-  $: radius = size / 2;
-  $: halfCircumference = Math.PI * radius;
-  $: pieSize = halfCircumference * (percent / 100);
-  $: dashArray = `0 ${halfCircumference - pieSize} ${pieSize}`;
+  export let result;
+
+  export const data = {
+    labels: ["Failed", "Passed"],
+    datasets: [
+      {
+        data: [result[0], result[1]],
+        backgroundColor: ["#F7464A", "#8BC34A"],
+        hoverBackgroundColor: ["#FF5A5E", "#9CCC4B"],
+      },
+    ],
+  };
+
+  import {
+    Chart as ChartJS,
+    Title,
+    Tooltip,
+    Legend,
+    ArcElement,
+    CategoryScale,
+    LinearScale,
+  } from "chart.js";
+
+  ChartJS.register(
+    Title,
+    Tooltip,
+    Legend,
+    ArcElement,
+    CategoryScale,
+    LinearScale
+  );
 </script>
 
-<svg width={size} height={size} {viewBox}>
-  <circle r={radius} cx={radius} cy={radius} fill={bgColor} />
-  <circle
-    r={radius / 2}
-    cx={radius}
-    cy={radius}
-    fill={bgColor}
-    stroke={fgColor}
-    stroke-width={radius}
-    stroke-dasharray={dashArray}
-  />
-</svg>
+<Doughnut {data} options={{ responsive: true }} />

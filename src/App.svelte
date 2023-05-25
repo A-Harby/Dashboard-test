@@ -26,15 +26,15 @@
 
   let Repo4: any = [
     { name: "Mainnet Mastodon 3.9.0", Created: "8th May 2023",
-      Pass: 50, Fail : 3, Skip: 2, Notrun: 1, url : "https://app.testlodge.com/a/26076/projects/40893/runs/697406" },
+      Pass: 50, Fail: 3, Skip: 2, Notrun: 1, url: "https://app.testlodge.com/a/26076/projects/40893/runs/697406" },
     { name: "Mainnet 3.9.0 TestRun", Created: "4th Apr 2023",
-      Pass: 537, Fail : 4, Skip: 6, Notrun: 13, url : "https://app.testlodge.com/a/26076/projects/40893/runs/691565" },
+      Pass: 537, Fail: 4, Skip: 6, Notrun: 13, url: "https://app.testlodge.com/a/26076/projects/40893/runs/691565" },
     { name: "Testnet 3.9.0 TestRun", Created: "23rd Mar 2023",
-      Pass: 531, Fail : 28, Skip: 2, Notrun: 0, url : "https://app.testlodge.com/a/26076/projects/40893/runs/689729" },
+      Pass: 531, Fail: 28, Skip: 2, Notrun: 0, url: "https://app.testlodge.com/a/26076/projects/40893/runs/689729" },
     { name: "QAnet 3.9.0 TestRun", Created: "6th Mar 2023",
-      Pass: 567, Fail : 13, Skip: 1, Notrun: 13, url : "https://app.testlodge.com/a/26076/projects/40893/runs/685440"},
+      Pass: 567, Fail: 13, Skip: 1, Notrun: 13, url: "https://app.testlodge.com/a/26076/projects/40893/runs/685440"},
     { name: "Mainnet 3.8 TestRun", Created: "21st Feb 2023",
-      Pass: 400, Fail : 8, Skip: 3, Notrun: 0, url : "https://app.testlodge.com/a/26076/projects/40893/runs/682888"}
+      Pass: 400, Fail: 8, Skip: 3, Notrun: 0, url: "https://app.testlodge.com/a/26076/projects/40893/runs/682888"}
   ];
 
   let Repo5: any = [
@@ -53,12 +53,12 @@
     <FinalReport {Repo2} />
     <FinalReport {Repo3} />
   </div>
-  <h1 style="text-align: center;">Test Suite Run Result</h1>
-  <div class="cards">
+  <h1 style="text-align: center;">Release Test Run Result</h1>
+  <div>
     <SuiteRun {Repo4} />
   </div>
-  <h1 style="text-align: center;">Test Run Statistics</h1>
-  <div class="cards">
+  <h1 style="text-align: center;">Daily Test Run Statistics</h1>
+  <div>
     <ReportList {Repo5} />
   </div>
 </main>
@@ -72,6 +72,8 @@
     background-color: #111217;
   }
   .cards {
+    background: #17223b;
+    padding-top: 5px;
     position: relative;
   }
 </style>
